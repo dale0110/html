@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" " http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns=" http://www.w3.org/1999/xhtml"> 
+
+<style> 
+    <!-- 
+    .div{ 
+    position: absolute; 
+    //border: 2px solid red; 
+    //background-color: #EFEFEF; 
+    //line-height:90px; 
+    font-size:12px; 
+    z-index:1000; 
+    } 
+    </style>
+<BODY>  
+<div id="Javascript.Div4" class="div" style="width: 200px; height: 30px; display: inline-flex; align-items: center; justify-content: center; text-align: center;"></div>
+<script type="text/javascript"> 
+function sc4(){ 
+document.getElementById("Javascript.Div4").style.top=(document.documentElement.scrollTop)+"px"; 
+document.getElementById("Javascript.Div4").style.left=(document.documentElement.scrollLeft+document.documentElement.clientWidth-document.getElementById("Javascript.Div4").offsetWidth)+"px"; 
+console.log(document.getElementById("Javascript.Div4").style.left); 
+}     
+    function clock() {
+        // 全局变量d，创建Date对象
+        var d = new Date();
+        // 获得日期时间控件
+        var spt = document.getElementById("Javascript.Div4");
+        // 格式：2018/2/5  19:19:33
+        //spt.innerHTML="<p>2018/2/5  19:19:33</p>";
+        spt.innerHTML = d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate() + " " + d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
+        //console.log(spt.innerHTML);
+    }
+</script> 
+<script type="text/javascript"> 
+function scall(){ 
+sc4();
+// 1s加载一次
+setInterval(clock, 1000);
+clock();
+} 
+window.onscroll=scall; 
+window.onresize=scall; 
+window.onload=scall; 
+
+</script> 
+<div style="position: absolute; top: 0px; left: 0px; width: 10000px; height: 4000px;"></div> 
+</BODY> 
+</HTML> 
